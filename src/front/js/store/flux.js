@@ -16,6 +16,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			]
 		},
 		actions: {
+
+
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
@@ -46,7 +48,37 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				//reset the global store
 				setStore({ demo: demo });
+			},
+
+			crearUsuario : (name, email, password) => {
+				fetch('https://api.example.com/data', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json' 
+					},
+					body: JSON.stringify({ 
+					   name: name,
+					   email: email,
+					   password: password,
+					   is_active: true
+					})
+				})
+				.then(response => {
+					if (!response.ok) { 
+						throw new Error('Error en la solicitud: ' + response.status);
+					}
+					return response.json(); 
+				})
+				.then(data => {
+					console.log('Datos recibidos:', data); 
+				})
+				.catch(error => {
+					console.error('Hubo un problema con la solicitud:', error); 
+				});
+				
 			}
+
+			
 		}
 	};
 };
