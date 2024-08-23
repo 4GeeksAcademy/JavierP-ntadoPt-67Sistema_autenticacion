@@ -25,11 +25,11 @@ const Signup = () => {
             <label for="exampleInputEmail1" className="form-label">Email address</label>
             <input onChange={(e)=>{setEmail(e.target.value)}} type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
           </div>
-          <div className="my-3 mx-5">
+          <div className="mt-3 mx-5">
             <label for="exampleInputPassword1" className="form-label">Password</label>
             <input onChange={(e)=>{setPassword(e.target.value)}} type="password" className="form-control" id="exampleInputPassword1"/>
           </div>
-          <button type="submit" className="btn btn-primary text-center mb-3">Submit</button>
+          <button type="submit" className="btn btn-primary text-center my-3">Submit</button>
         </form>
       </div>
     )
