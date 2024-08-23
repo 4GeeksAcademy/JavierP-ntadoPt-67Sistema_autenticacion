@@ -51,7 +51,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			crearUsuario : (name, email, password) => {
-				fetch('https://api.example.com/data', {
+				fetch('https://cautious-space-sniffle-gwj9p7pgwg29prv-3000.app.github.dev/api/signup', {
 					method: 'POST',
 					headers: {
 						'Content-Type': 'application/json' 
@@ -76,9 +76,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.error('Hubo un problema con la solicitud:', error); 
 				});
 				
-			}
-
+			},
 			
+			iniciarSesion: () => {
+			},
+			validacion: () => {}
 		}
 	};
 };
